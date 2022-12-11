@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Geometria';
+    src: local('Geometria Regular'), local('Geometria-Regular'),
+    url('./Geometria-Regular.woff2') format('woff2'),
+    url('./Geometria-Regular.woff') format('woff'),
+    url('./Geometria-Regular.eot') format('embedded-opentype'),
+    url('./Geometria-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('Geometria Medium'), local('Geometria-Medium'),
+    url('./Geometria-Medium.woff2') format('woff2'),
+    url('./Geometria-Medium.woff') format('woff'),
+    url('./Geometria-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('Geometria Bold'), local('Geometria-Bold'),
+    url('./Geometria-Bold.woff2') format('woff2'),
+    url('./Geometria-Bold.woff') format('woff'),
+    url('./Geometria-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
