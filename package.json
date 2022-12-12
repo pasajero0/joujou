@@ -25,8 +25,11 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src --ext js,jsx,ts,tsx",
-    "lintfix": "yarn lint --fix"
+    "lint": "eslint ./src --ext js,jsx,ts,tsx --color",
+    "lint-fix": "yarn lint --fix",
+    "format": "prettier --write \"./**/*.{ts,tsx}\"",
+    "git-add": "git add .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -59,7 +62,16 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.31.11",
+    "husky": "8.0.2",
+    "lint-staged": "13.1.0",
     "prettier": "2.8.1",
     "ts-jest": "29.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn lint-fix",
+      "yarn format",
+      "git-add"
+    ]
   }
 }

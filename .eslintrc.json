@@ -1,144 +1,139 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "airbnb-typescript",
-        "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:import/typescript",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "prettier"
-    ],
-    "overrides": [
-        {
-            "files": ["*.ts", "*.tsx"],
-            "extends": [
-              "plugin:@typescript-eslint/recommended",
-              "plugin:@typescript-eslint/recommended-requiring-type-checking"
-            ],
-      
-            "parserOptions": {
-              "project": ["./tsconfig.json"]
-            }
-          }
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": "./tsconfig.json",
-        "tsconfigRootDir": ".",
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "import",
-        "prettier"
-    ],
-    "rules": {
-        "indent": "off",
-        "no-return-await": "error",
-        "no-underscore-dangle": "error",
-        "no-param-reassign": 0,
-        "no-async-promise-executor": "error",
-        "no-void": 0,
-        "no-console": "warn",
-        "consistent-return": "warn",
-        "no-unused-vars": ["error", { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
-        "camelcase": "warn",
-        "import/named": 2,
-        "import/namespace": 2,
-        "import/default": 2,
-        "import/export": 2,
-        "import/no-unresolved": 0,
-        "import/prefer-default-export": 0,
-        "prefer-promise-reject-errors": 1,
-        "object-curly-spacing": ["error", "always"],
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
 
-        "react/display-name": 0,
-        "react/jsx-key": "error",
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
-        "react/jsx-indent-props": ["error", 2],
-        "react/jsx-props-no-spreading": 0,
-        "react/react-in-jsx-scope": 0,
-        "react/require-default-props": 1,
-        "react/prop-types": 0,
-        "react/jsx-indent": [2, 2],
-
-        "@typescript-eslint/indent": ["error", 2],
-        "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
-        "@typescript-eslint/camelcase": 0,
-        "@typescript-eslint/explicit-module-boundary-types": 0,
-        "@typescript-eslint/strict-boolean-expressions": ["error", {"allowString": false, "allowNumber": false }],
-        "@typescript-eslint/naming-convention": [
-            "error",
-            {
-                "selector": "variable",
-                "format": ["camelCase", "PascalCase", "UPPER_CASE"]
-            },
-            {
-                "selector": "variable",
-                "types": ["boolean"],
-                "format": ["PascalCase"],
-                "prefix": ["is", "should", "has", "can"]
-            },
-
-            {
-                "selector": "parameter",
-                "format": ["strictCamelCase"],
-                "leadingUnderscore": "allow",
-                "filter": {
-                    "regex": "^(Icon|Component)$",
-                    "match": false
-                }
-            },
-            {
-                "selector": "memberLike",
-                "format": ["camelCase", "PascalCase"]
-            },
-            {
-                "selector": "enumMember",
-                "format": ["PascalCase", "UPPER_CASE"]
-            },
-
-            {
-                "selector": "typeLike",
-                "format": ["PascalCase"]
-            },
-            {
-                "selector": "class",
-                "format": ["PascalCase"],
-                "suffix": ["Class"]
-            },
-            {
-                "selector": "typeAlias",
-                "format": ["PascalCase"],
-                "suffix": ["Type"]
-            },
-            {
-                "selector": "enum",
-                "format": ["PascalCase"],
-                "suffix": ["Enum"]
-            },
-            {
-                "selector": "interface",
-                "format": ["PascalCase"],
-                "suffix": ["Interface"],
-                "filter": {
-                    "regex": "(Props|ProcessEnv)$",
-                    "match": false
-                }
-            },
-            {
-                "selector": "typeParameter",
-                "format": ["camelCase", "UPPER_CASE"]
-            }
-        ]
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
     }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": ".",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "import", "prettier"],
+  "rules": {
+    "indent": "off",
+    "no-return-await": "error",
+    "no-underscore-dangle": "error",
+    "no-param-reassign": 0,
+    "no-async-promise-executor": "error",
+    "no-void": 0,
+    "no-console": "warn",
+    "consistent-return": "warn",
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
+    "camelcase": "warn",
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "prefer-promise-reject-errors": 1,
+    "object-curly-spacing": ["error", "always"],
+
+    "react/display-name": 0,
+    "react/jsx-key": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-props-no-spreading": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/require-default-props": 1,
+    "react/prop-types": 0,
+    "react/jsx-indent": [2, 2],
+
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/strict-boolean-expressions": ["error", { "allowString": false, "allowNumber": false }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "should", "has", "can"]
+      },
+
+      {
+        "selector": "parameter",
+        "format": ["strictCamelCase"],
+        "leadingUnderscore": "allow",
+        "filter": {
+          "regex": "^(Icon|Component)$",
+          "match": false
+        }
+      },
+      {
+        "selector": "memberLike",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "enumMember",
+        "format": ["PascalCase", "UPPER_CASE"]
+      },
+
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "class",
+        "format": ["PascalCase"],
+        "suffix": ["Class"]
+      },
+      {
+        "selector": "typeAlias",
+        "format": ["PascalCase"],
+        "suffix": ["Type"]
+      },
+      {
+        "selector": "enum",
+        "format": ["PascalCase"],
+        "suffix": ["Enum"]
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "suffix": ["Interface"],
+        "filter": {
+          "regex": "(Props|ProcessEnv)$",
+          "match": false
+        }
+      },
+      {
+        "selector": "typeParameter",
+        "format": ["camelCase", "UPPER_CASE"]
+      }
+    ]
+  }
 }
