@@ -1,7 +1,7 @@
 import 'css-reset-and-normalize';
 import styled from 'styled-components';
 
-import { Whisper } from '@style/colors';
+import { ColorEnum } from '@style/colors.enum';
 
 import '@style/global.css';
 
@@ -10,5 +10,5 @@ export const RootWrapper = styled.div`
   flex: 1;
   flex-direction: column;
 
-  background-color: ${Whisper};
+  background-color: ${ColorEnum.WHISPER};
 `;
