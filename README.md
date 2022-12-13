@@ -14,7 +14,7 @@
 
 ##### UI - [React](https://ru.reactjs.org/) and [Documentation](https://ru.reactjs.org/docs/getting-started.html)
 
-##### UI styling - [Styled-components](https://styled-components.com/) and [Documentation](https://styled-components.com/docs4)
+##### UI styling - [Styled-components](https://styled-components.com/)
 
 ## Getting Started with Create React App
 
