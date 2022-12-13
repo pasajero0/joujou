@@ -1,6 +1,22 @@
-## Joujou Application README
+# Joujou Application README
 
-# Getting Started with Create React App
+##### Developer Roadmap for the project
+
+[developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+
+##### Concepts and Templates
+
+- Based on the idea of [Atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
+- Follow [SOLID](https://ota-solid.now.sh/) and [GRASP](https://bool.dev/blog/detail/grasp-printsipy) approaches
+- Also design patterns [Refactoring-Guru](https://refactoring.guru/en/design-patterns) and [part of GOF examples on TS](https://github.com/Uncleseneca/typescript_design_patterns)
+
+### Tools
+
+##### UI - [React](https://ru.reactjs.org/) and [Documentation](https://ru.reactjs.org/docs/getting-started.html)
+
+##### UI styling - [Styled-components](https://styled-components.com/) and [Documentation](https://styled-components.com/docs4)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
