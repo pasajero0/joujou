@@ -6,9 +6,11 @@
       "@atom/*": ["src/atoms/*"],
       "@component/*": ["src/components/*"],
       "@enum/*": ["src/enums/*"],
+      "@page/*": ["src/pages/*"],
       "@style/*": ["src/styles/*"],
       "@type/*": ["src/types/*"],
-      "@util/*": ["src/utils/*"]
+      "@util/*": ["src/utils/*"],
+      "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
     }
   }
 }
