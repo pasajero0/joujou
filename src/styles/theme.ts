@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 export const MAIN_THEME = createTheme({
   palette: {
     primary: {
-      main: ColorEnum.YELLOW,
+      main: ColorEnum.BLUE,
     },
   },
 });
