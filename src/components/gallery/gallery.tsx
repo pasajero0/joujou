@@ -1,15 +1,11 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { GalleryWrapper } from './gallery.style';
+import { GalleryProps } from './gallery.type';
+import { Picture } from './gallery-picture';
 
-interface GalleryProps {
-  images: any[];
-}
+const COLUMNS = 3;
 
-export const Gallery = ({ images }: GalleryProps) => (
-  <GalleryWrapper>
-    {images?.map(({ id, download_url }) => (
-      <img key={id} src={download_url} alt="..." loading="lazy" width={100} />
-    ))}
+export const Gallery = ({ images, cols = COLUMNS, gap = COLUMNS * 2, variant = 'masonry' }: GalleryProps) => (
+  <GalleryWrapper cols={cols} gap={gap} variant={variant}>
+    {images?.map(Picture)}
   </GalleryWrapper>
 );
