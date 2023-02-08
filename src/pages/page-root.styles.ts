@@ -5,8 +5,3 @@ export const MainWrapperView = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const MainWrapperBlock = styled.div`
-  padding: 8px;
-  flex: 1;
-`;

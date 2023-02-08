@@ -1,6 +1,5 @@
-import { ImageList } from '@mui/material';
 import styled from 'styled-components';
 
-export const GalleryWrapper = styled(ImageList)`
-  border-radius: 4px;
+export const GalleryWrapper = styled.div`
+  padding: 0 10px;
 `;
