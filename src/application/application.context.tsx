@@ -2,10 +2,9 @@ import { createContext, useState } from 'react';
 import { noop } from 'lodash';
 
 import { FCCType } from '@type/fc-with-children.type';
-import { CurrenciesEnum } from '@enum/currencies.enum';
 
 const initialProps = {
-  currency: CurrenciesEnum.EUR,
+  user: null,
 };
 
 export const ApplicationContext = createContext({

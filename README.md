@@ -1,14 +1,8 @@
 # Joujou Application README
 
-##### Developer Roadmap for the project
+##### Developer Roadmap
 
 [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
-
-##### Concepts and Templates
-
-- Based on the idea of [Atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
-- Follow [SOLID](https://ota-solid.now.sh/) and [GRASP](https://bool.dev/blog/detail/grasp-printsipy) approaches
-- Also design patterns [Refactoring-Guru](https://refactoring.guru/en/design-patterns) and [part of GOF examples on TS](https://github.com/Uncleseneca/typescript_design_patterns)
 
 ### Tools
 

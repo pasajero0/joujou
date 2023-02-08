@@ -4,6 +4,7 @@ export enum ColorEnum {
   WHITE_LIGHT = 'rgba(255,255,255,0.5)',
   BLACK = '#000000',
   BLACK_LIGHT = 'rgba(0,0,0,0.5)',
+  BLUE = '#0a66c2',
   YELLOW = '#FFAB00',
   LIGHT_YELLOW = '#FBBC05',
   GREY = '#828282',

@@ -1,18 +1,24 @@
 import { memo } from 'react';
 
+import { PageRoot } from '@page/page-root';
+
 import { ApplicationContextProvider } from './application.context';
 import { RootWrapper } from './application.styles';
+import { ThemeProvider } from '@mui/material';
+import { MAIN_THEME } from '@style/theme';
 
 const MainApplication = memo(() => (
   <>
     <RootWrapper>
-      <h1>salut joujou</h1>
+      <PageRoot />
     </RootWrapper>
   </>
 ));
 
 export const Application = () => (
   <ApplicationContextProvider>
-    <MainApplication />
+    <ThemeProvider theme={MAIN_THEME}>
+      <MainApplication />
+    </ThemeProvider>
   </ApplicationContextProvider>
 );
