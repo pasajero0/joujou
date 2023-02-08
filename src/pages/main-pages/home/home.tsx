@@ -8,6 +8,7 @@ import { Scroll } from '@component/scroll/scroll';
 const URL = 'https://picsum.photos/v2/list?page=2&limit=50';
 
 const getData = async () => {
+  // TODO change
   try {
     const response = await fetch(URL);
     return (await (response.json() as unknown)) as ImageInterface[];
