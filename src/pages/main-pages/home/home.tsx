@@ -1,9 +1,8 @@
 import { Gallery } from '@component/gallery/gallery';
-import { HomeWrapper } from './home.styles';
-import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { ImageInterface } from '@component/gallery/gallery.type';
 import { Scroll } from '@component/scroll/scroll';
+import { PageWrapper } from '@component/page-wrapper/page-wrapper';
 
 const URL = 'https://picsum.photos/v2/list?page=2&limit=50';
 
@@ -26,16 +25,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <>
-      <Typography variant="h4" component="h1" align="center">
-        joujou
-      </Typography>
-      <HomeWrapper>
-        <Scroll>
-          <Gallery images={images} />
-        </Scroll>
-      </HomeWrapper>
-    </>
+    <PageWrapper>
+      <Scroll>
+        <Gallery images={images} />
+      </Scroll>
+    </PageWrapper>
   );
 };
 
