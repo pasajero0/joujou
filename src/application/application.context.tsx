@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
-import { noop } from 'lodash';
 
 import { FCCType } from '@type/fc-with-children.type';
+import { noop } from '@util/noop';
 
 const initialProps = {
   user: null,
