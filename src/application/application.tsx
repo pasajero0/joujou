@@ -6,6 +6,7 @@ import { ApplicationContextProvider } from './application.context';
 import { RootWrapper } from './application.styles';
 import { ThemeProvider } from '@mui/material';
 import { MAIN_THEME } from '@style/theme';
+import { BrowserRouter } from 'react-router-dom';
 
 const MainApplication = memo(() => (
   <>
@@ -18,7 +19,9 @@ const MainApplication = memo(() => (
 export const Application = () => (
   <ApplicationContextProvider>
     <ThemeProvider theme={MAIN_THEME}>
-      <MainApplication />
+      <BrowserRouter>
+        <MainApplication />
+      </BrowserRouter>
     </ThemeProvider>
   </ApplicationContextProvider>
 );

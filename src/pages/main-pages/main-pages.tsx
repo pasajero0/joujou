@@ -1,11 +1,13 @@
 import { PageEnum } from '@enum/page.enum';
 
 import { MainPagesPage } from './main-pages.page';
+import { useLocation } from 'react-router';
 
 const mainPages = new Set([PageEnum.Home, PageEnum.About]);
 
 export const MainPages = () => {
-  const name = PageEnum.About; // TODO create hook useCurrentNavigation
+  const { pathname } = useLocation();
+  const shouldRenderMainPages = mainPages.has(pathname as unknown as PageEnum);
 
-  return mainPages.has(name) ? <MainPagesPage name={name} /> : null;
+  return shouldRenderMainPages ? <MainPagesPage /> : null;
 };

@@ -1,17 +1,18 @@
 import { OnEventEmptyType } from '@type/on-event.type';
 import { useCallback } from 'react';
+import { useLocation, useNavigate } from 'react-router';
 
 export const useNavigationItem = (pageName?: string): [boolean, OnEventEmptyType] => {
-  // const { navigate } = useRouter(); // TODO add router useRouter
-  // const { name } = useCurrentNavigation(); // TODO create hook useCurrentNavigation
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleMenuClick = useCallback(() => {
-    console.log('item clicked', pageName);
-    // navigate(pageName);
+    if (pageName === undefined) return;
+
+    navigate(pageName);
   }, [pageName]);
 
-  // const isActive = name === pageName;
-  const isActive = false;
+  const isActive = pathname === pageName;
 
   return [isActive, handleMenuClick];
 };

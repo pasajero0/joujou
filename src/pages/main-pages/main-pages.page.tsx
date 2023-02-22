@@ -1,22 +1,22 @@
 import { memo, lazy } from 'react';
+import { Routes, Route } from 'react-router';
 
 import { PageEnum } from '@enum/page.enum';
 import { PageWrapper } from '@component/page-wrapper/page-wrapper';
+import { PageLoader } from '@component/page-loader/page-loader';
+
 import { PageMenuList } from './main-pages.options';
 
 const HomePage = lazy(() => import('./home/home'));
 const AboutPage = lazy(() => import('./about/about'));
 
-interface MainPagesPageProps {
-  name: PageEnum;
-}
-
-// TODO create PageLoader
-export const MainPagesPage = memo(({ name }: MainPagesPageProps) => (
+export const MainPagesPage = memo(() => (
   <PageWrapper pageMenuList={PageMenuList}>
-    {/* <PageLoader> */}
-    {name === PageEnum.Home && <HomePage />}
-    {name === PageEnum.About && <AboutPage />}
-    {/* </PageLoader> */}
+    <PageLoader>
+      <Routes>
+        <Route path={PageEnum.Home} element={<HomePage />} />
+        <Route path={PageEnum.About} element={<AboutPage />} />
+      </Routes>
+    </PageLoader>
   </PageWrapper>
 ));
