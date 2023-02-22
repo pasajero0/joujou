@@ -1,5 +1,5 @@
 import { Gallery } from '@component/gallery/gallery';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { ImageInterface } from '@component/gallery/gallery.type';
 import { Scroll } from '@component/scroll/scroll';
 import { PageWrapper } from '@component/page-wrapper/page-wrapper';
@@ -20,7 +20,7 @@ const getData = async () => {
 const HomePage = () => {
   const [images, setImages] = useState<ImageInterface[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     void getData().then(data => setImages(data));
   }, []);
 

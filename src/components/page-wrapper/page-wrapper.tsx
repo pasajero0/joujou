@@ -20,9 +20,7 @@ export const PageWrapper: FCCType = ({ children }) => {
         </LogoWrapper>
       </PageNavigationWrapper>
       <PageFade />
-      {/* <PageLoader> */}
       <PageContentWrapper>{children}</PageContentWrapper>
-      {/* </PageLoader> */}
     </PageWrapperRoot>
   );
 };
