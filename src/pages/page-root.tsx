@@ -1,5 +1,5 @@
 import { memo } from 'react';
 
-import HomePage from './main-pages/home/home';
+import { MainPages } from './main-pages/main-pages';
 
-export const PageRoot = memo(() => <HomePage />);
+export const PageRoot = memo(() => <MainPages />);

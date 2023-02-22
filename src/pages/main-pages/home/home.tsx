@@ -25,11 +25,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <PageWrapper>
+    <>
       <Scroll>
         <Gallery images={images} />
       </Scroll>
-    </PageWrapper>
+    </>
   );
 };
 
