@@ -18,3 +18,5 @@ body,
 #root {
   display: flex;
 }
+
+button:focus { outline: none; }

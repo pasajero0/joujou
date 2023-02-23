@@ -1,11 +1,5 @@
-import { Typography } from '@mui/material';
-import {
-  LogoWrapper,
-  PageContentWrapper,
-  PageNavigationWrapper,
-  PageNavigation,
-  PageWrapperRoot,
-} from './page-wrapper.styles';
+import { AppBar, Typography } from '@mui/material';
+import { PageContentWrapper, PageNavigationWrapper, PageWrapperRoot } from './page-wrapper.styles';
 import { FCCType } from '@type/fc-with-children.type';
 import { ColorEnum } from '@style/colors.enum';
 import { PageWrapperNavigation } from './page-wrapper-navigation/page-wrapper-navigation';
@@ -18,16 +12,14 @@ interface PageWrapperInterface {
 export const PageWrapper: FCCType<PageWrapperInterface> = ({ pageMenuList = [], children }) => {
   return (
     <PageWrapperRoot>
-      <PageNavigationWrapper>
-        <PageNavigation>
-          <LogoWrapper>
-            <Typography variant="h5" component="h1" align="center" color={ColorEnum.WHITE}>
-              joujou
-            </Typography>
-          </LogoWrapper>
+      <AppBar position="static">
+        <PageNavigationWrapper variant="dense">
+          <Typography variant="h5" component="h1" align="center" color={ColorEnum.WHITE}>
+            joujou
+          </Typography>
           <PageWrapperNavigation pageMenuList={pageMenuList} />
-        </PageNavigation>
-      </PageNavigationWrapper>
+        </PageNavigationWrapper>
+      </AppBar>
       <PageContentWrapper>{children}</PageContentWrapper>
     </PageWrapperRoot>
   );

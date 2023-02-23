@@ -7,4 +7,11 @@ export const MAIN_THEME = createTheme({
       main: ColorEnum.BLUE,
     },
   },
+  components: {
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+  },
 });

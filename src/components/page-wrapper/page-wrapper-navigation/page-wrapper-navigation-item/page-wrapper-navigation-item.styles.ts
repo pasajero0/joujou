@@ -9,20 +9,11 @@ const NavigationItemIconWrapperActive = css`
   border-bottom-color: ${ColorEnum.WHITE};
 `;
 
-export const NavigationItem = styled.li`
-  :not(:last-child) {
-    margin-right: 8px;
-  }
-`;
-
-export const NavigationItemWrapper = styled.div<NavigationItemProps>`
-  height: 100%;
+export const NavigationItem = styled.li<NavigationItemProps>`
   display: flex;
   align-items: center;
-  overflow: hidden;
-  cursor: pointer;
-  color: ${ColorEnum.WHITE};
-  border: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
 
   :hover {
     ${NavigationItemIconWrapperActive}
