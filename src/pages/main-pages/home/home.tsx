@@ -2,7 +2,7 @@ import { Gallery } from '@component/gallery/gallery';
 import { useLayoutEffect, useState } from 'react';
 import { ImageInterface } from '@component/gallery/gallery.type';
 import { Scroll } from '@component/scroll/scroll';
-import { PageBlock, PageContainerWrapper } from '@page/main-pages/common/common.styles';
+import { PageBlock, PageContainerWrapper } from '@page/main-pages/common.styles';
 
 const URL = 'https://picsum.photos/v2/list?page=2&limit=50';
 
@@ -25,15 +25,13 @@ const HomePage = () => {
   }, []);
 
   return (
-    <>
-      <Scroll>
-        <PageContainerWrapper>
-          <PageBlock>
-            <Gallery images={images} />
-          </PageBlock>
-        </PageContainerWrapper>
-      </Scroll>
-    </>
+    <Scroll>
+      <PageContainerWrapper>
+        <PageBlock>
+          <Gallery images={images} />
+        </PageBlock>
+      </PageContainerWrapper>
+    </Scroll>
   );
 };
 
