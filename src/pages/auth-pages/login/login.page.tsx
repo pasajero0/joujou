@@ -10,6 +10,7 @@ import { LoginFormFormInitial } from '@component/forms/login-form/login-form.ini
 import { LoginFormValuesInterface } from '@component/forms/login-form/login-form.interface';
 
 import { BlockWrapper, LoginWrapper } from './login.styles';
+import { LoginFormValidation } from '@component/forms/login-form/login-form.validation';
 
 const LoginPage = () => {
   const handleSubmit = (values: LoginFormValuesInterface) => console.log('submit', values);
@@ -22,7 +23,14 @@ const LoginPage = () => {
             Login joujou
           </Typography>
         </BlockWrapper>
-        <Formik onSubmit={handleSubmit} initialValues={LoginFormFormInitial} enableReinitialize>
+        <Formik
+          onSubmit={handleSubmit}
+          initialValues={LoginFormFormInitial}
+          validationSchema={LoginFormValidation}
+          validateOnBlur={false}
+          validateOnChange={false}
+          enableReinitialize
+        >
           <Form>
             <LoginForm />
             <FormButtonWrapper>
