@@ -20,7 +20,7 @@ const LoginPage = () => {
       <LoginWrapper>
         <BlockWrapper>
           <Typography variant="h5" component="h2" align="center">
-            Login joujou
+            Please enter!
           </Typography>
         </BlockWrapper>
         <Formik
