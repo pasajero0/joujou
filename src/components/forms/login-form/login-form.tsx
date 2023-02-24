@@ -7,10 +7,10 @@ import { LoginFormEnum } from './login-form.enum';
 export const LoginForm = () => (
   <FormWrapper>
     <FormRow>
-      <Input name={LoginFormEnum.Email} label="Email" required />
+      <Input name={LoginFormEnum.Email} label="Email" />
     </FormRow>
     <FormRow>
-      <Input name={LoginFormEnum.Password} label="Password" type={InputTypeEnum.Password} required />
+      <Input name={LoginFormEnum.Password} label="Password" type={InputTypeEnum.Password} />
     </FormRow>
   </FormWrapper>
 );
