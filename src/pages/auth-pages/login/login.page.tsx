@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Form, Formik } from 'formik';
 
 import { Button, Typography } from '@mui/material';
@@ -11,9 +12,19 @@ import { LoginFormValuesInterface } from '@component/forms/login-form/login-form
 
 import { BlockWrapper, LoginWrapper } from './login.styles';
 import { LoginFormValidation } from '@component/forms/login-form/login-form.validation';
+import { ApplicationContext } from '@application/application.context';
+import { PageEnum } from '@enum/page.enum';
+import { useNavigate } from 'react-router';
 
 const LoginPage = () => {
-  const handleSubmit = (values: LoginFormValuesInterface) => console.log('submit', values);
+  const { setProps } = useContext(ApplicationContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (values: LoginFormValuesInterface) => {
+    console.log('submit', values); // TODO remove
+    setProps({ user: values });
+    navigate(PageEnum.Profile);
+  };
 
   return (
     <Wrapper>

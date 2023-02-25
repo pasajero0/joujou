@@ -4,13 +4,13 @@ interface PageBlockProps {
   hasEmptyLateralPadding?: boolean;
 }
 
-export const PageWrapper = styled.div`
+export const Wrapper = styled.div`
   max-width: 1094px;
   width: 100%;
   margin: 0 auto;
 `;
 
-export const PageContainerWrapper = styled(PageWrapper)`
+export const PageContainerWrapper = styled(Wrapper)`
   padding: 0 0 40px 0;
 `;
 
