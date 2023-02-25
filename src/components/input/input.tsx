@@ -22,7 +22,6 @@ export const Input: FCCType<InputProps> = ({
   ...props
 }) => {
   const [field, { error }, { setError, setValue }] = useField<string>(name);
-
   const currentValue = field?.value ?? '';
   const hasError = error !== undefined;
 
