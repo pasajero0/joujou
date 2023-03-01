@@ -14,4 +14,8 @@ export const PageMenuList: PageMenuListItemInterface[] = [
     title: 'About',
     pageName: PageEnum.About,
   },
+  {
+    title: 'Board',
+    pageName: PageEnum.Board,
+  },
 ];
