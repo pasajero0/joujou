@@ -60,16 +60,16 @@ export const useBoard = ({
         }
 
         const isFieldDark = isReverse ? !isCheckEven : isCheckEven;
-        const shouldRenderChecker = value !== CheckerEnum.EMPTY;
+        const hasChecker = value !== CheckerEnum.EMPTY;
         const isCheckerBlack = BLACKS.has(value);
         const isCheckerKing = KINGS.has(value);
 
         return callback({
-          key: index,
+          index,
           isFieldDark,
+          hasChecker,
           isCheckerBlack,
           isCheckerKing,
-          shouldRenderChecker,
           onDrop: onDrop({ value, index, isFieldDark }),
           onDrag: onDrag({ value, index }),
           onDragOver,

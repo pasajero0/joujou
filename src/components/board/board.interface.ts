@@ -15,11 +15,11 @@ export interface OnDropProps extends OnDragProps {
 }
 
 export interface BoardRendererProps {
-  key: number;
+  index: number;
+  hasChecker: boolean;
   isFieldDark: boolean;
   isCheckerBlack: boolean;
   isCheckerKing: boolean;
-  shouldRenderChecker: boolean;
   onDrop: DragEventHandler;
   onDrag: DragEventHandler;
   onDragOver: DragEventHandler;
