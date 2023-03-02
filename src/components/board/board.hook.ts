@@ -23,15 +23,17 @@ export const useBoard = ({
   const onDrag: OnEventType<OnDragProps, DragEventHandler> =
     ({ value, index }) =>
     ({ dataTransfer }) =>
-      dataTransfer?.setData(CHECKER_TYPE, `${value},${index}`);
+      dataTransfer.setData(CHECKER_TYPE, `${value},${index}`);
 
   const onDrop: OnEventType<OnDropProps, DragEventHandler> =
     ({ value, index, isDark }) =>
     ({ dataTransfer }) => {
       if (!isDark || value !== CheckerEnum.EMPTY) return;
 
-      const [droppedValue, droppedIndex] =
-        (dataTransfer?.getData(CHECKER_TYPE).split(',') as unknown as [CheckerEnum, string]) ?? [];
+      const [droppedValue, droppedIndex] = dataTransfer.getData(CHECKER_TYPE).split(',') as unknown as [
+        CheckerEnum,
+        string
+      ];
 
       setBoardItems(prevFen => {
         const newFen = [...prevFen];
