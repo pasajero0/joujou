@@ -9,6 +9,7 @@ import { PageMenuList } from './main-pages.options';
 
 const HomePage = lazy(() => import('./home/home'));
 const AboutPage = lazy(() => import('./about/about'));
+const BoardPage = lazy(() => import('./board/board'));
 
 export const MainPagesPage = memo(() => (
   <PageWrapper pageMenuList={PageMenuList}>
@@ -16,6 +17,7 @@ export const MainPagesPage = memo(() => (
       <Routes>
         <Route path={PageEnum.Home} element={<HomePage />} />
         <Route path={PageEnum.About} element={<AboutPage />} />
+        <Route path={PageEnum.Board} element={<BoardPage />} />
       </Routes>
     </PageLoader>
   </PageWrapper>
