@@ -1,3 +1,4 @@
+import { DragEventHandler } from 'react';
 import { CheckerEnum } from './board.enum';
 
 export interface BoardProps {
@@ -10,5 +11,16 @@ export interface OnDragProps {
 }
 
 export interface OnDropProps extends OnDragProps {
-  isDark: boolean;
+  isFieldDark: boolean;
+}
+
+export interface BoardRendererProps {
+  key: number;
+  isFieldDark: boolean;
+  isCheckerBlack: boolean;
+  isCheckerKing: boolean;
+  shouldRenderChecker: boolean;
+  onDrop: DragEventHandler;
+  onDrag: DragEventHandler;
+  onDragOver: DragEventHandler;
 }
