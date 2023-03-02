@@ -21,5 +21,5 @@ export const BoardField = styled.div<BoardFieldProps>`
   justify-content: center;
   align-items: center;
 
-  background: ${({ isDark = false }) => (isDark ? ColorEnum.WHITE : ColorEnum.BLACK)};
+  background: ${({ isDark = false }) => (isDark ? ColorEnum.BLACK : ColorEnum.WHITE)};
 `;

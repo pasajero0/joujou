@@ -3,4 +3,5 @@ export enum CheckerEnum {
   WHITE_KING = 'W',
   BLACK = 'b',
   BLACK_KING = 'B',
+  EMPTY = '.',
 }
