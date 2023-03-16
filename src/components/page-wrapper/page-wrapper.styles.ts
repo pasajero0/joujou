@@ -1,8 +1,5 @@
 import { Toolbar } from '@mui/material';
-import { ColorEnum } from '@style/colors.enum';
 import styled from 'styled-components';
-
-const LOGO_HEIGHT = 32;
 
 export const PageWrapperRoot = styled.section`
   height: 100%;
