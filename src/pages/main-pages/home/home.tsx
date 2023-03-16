@@ -12,6 +12,7 @@ const getData = async () => {
     const response = await fetch(URL);
     return (await (response.json() as unknown)) as ImageInterface[];
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
     return [];
   }
