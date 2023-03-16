@@ -13,6 +13,7 @@ import { BlockWrapper, LoginWrapper } from './login.styles';
 import { LoginFormValidation } from '@component/forms/login-form/login-form.validation';
 
 const LoginPage = () => {
+  // eslint-disable-next-line no-console
   const handleSubmit = (values: LoginFormValuesInterface) => console.log('submit', values);
 
   return (
