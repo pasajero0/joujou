@@ -10,6 +10,7 @@ export const AuthPagesPage = memo(() => (
   <PageLoader>
     <Routes>
       <Route path={PageEnum.Login} element={<LoginPage />} />
+      <Route path={PageEnum.Signup} element={<LoginPage isSignUp />} />
     </Routes>
   </PageLoader>
 ));

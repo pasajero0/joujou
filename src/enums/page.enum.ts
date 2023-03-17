@@ -4,4 +4,5 @@ export enum PageEnum {
 
   Profile = '/profile',
   Login = '/login',
+  Signup = '/signup',
 }

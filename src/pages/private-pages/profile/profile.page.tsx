@@ -1,16 +1,12 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 import { Wrapper } from '@page/auth-pages/common.styles';
 
 import { BlockWrapper } from './profile.styles';
-import { useContext } from 'react';
-import { ApplicationContext } from '@application/application.context';
+import { useAuth } from 'src/hooks/auth.hook'; // TODO! add path
 
 const ProfilePage = () => {
-  const {
-    props: { user },
-  } = useContext(ApplicationContext);
-  console.log('PROFILE: ', user); // TODO remove
+  const [{ onSignOut }] = useAuth();
 
   return (
     <Wrapper>
@@ -18,6 +14,8 @@ const ProfilePage = () => {
         <Typography variant="h5" component="h2" align="center">
           Profile
         </Typography>
+        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+        <Button onClick={onSignOut}>SIGN OUT</Button>
       </BlockWrapper>
     </Wrapper>
   );
