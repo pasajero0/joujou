@@ -1,19 +1,12 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-
-import { auth } from 'src/base/base';
+import { auth } from 'src/base/base'; // TODO! fix path
 import { ApplicationContext } from '@application/application.context';
 import { PageEnum } from '@enum/page.enum';
+import { errorHandler } from './auth-hook.helper';
+import { AuthMethodsInterface } from './auth-hook.interface';
 import { LoginFormValuesInterface } from '@component/forms/login-form/login-form.interface';
-import { OnEventEmptyType, OnEventType } from '@type/on-event.type';
-import type { FirebaseError } from 'firebase/app';
-
-interface AuthMethodsInterface {
-  onLogin: OnEventType<LoginFormValuesInterface, Promise<void>>;
-  onSignUp: OnEventType<LoginFormValuesInterface, Promise<void>>;
-  onSignOut: OnEventEmptyType<Promise<void>>;
-}
 
 export const useAuth = (): [AuthMethodsInterface, boolean, string | null] => {
   const {
@@ -21,36 +14,34 @@ export const useAuth = (): [AuthMethodsInterface, boolean, string | null] => {
     setProps,
   } = useContext(ApplicationContext);
   const navigate = useNavigate();
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  onAuthStateChanged(auth, authData => {
-    const isUserExist = user !== null;
+  const isUserExist = user !== null;
 
+  useEffect(() => {
+    if (!isUserExist) return;
+    navigate(PageEnum.Profile);
+  }, [user]);
+
+  onAuthStateChanged(auth, authData => {
     if (authData !== null) {
       if (isUserExist) return;
-      console.log('LOGED IN: ', authData);
       const { uid, email } = authData;
       setProps({ user: { uid, email } });
-      navigate(PageEnum.Profile);
-
       return;
     }
 
     if (!isUserExist) return;
-    console.log('NO USERS');
     setProps({ user: null });
   });
 
   const onLogin = async ({ email, password }: LoginFormValuesInterface) => {
     try {
       setLoading(true);
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('handleLogin', email, password, userCredential); // TODO remove
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
-      console.error(err);
-      const { code } = err as FirebaseError;
-      setError(code);
+      errorHandler(err, setError);
     } finally {
       setLoading(false);
     }
@@ -59,12 +50,9 @@ export const useAuth = (): [AuthMethodsInterface, boolean, string | null] => {
   const onSignUp = async ({ email, password }: LoginFormValuesInterface) => {
     try {
       setLoading(true);
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('handleSignUp', email, password, userCredential); // TODO remove
+      await createUserWithEmailAndPassword(auth, email, password);
     } catch (err) {
-      console.error(err);
-      const { code } = err as FirebaseError;
-      setError(code);
+      errorHandler(err, setError);
     } finally {
       setLoading(false);
     }
@@ -75,9 +63,7 @@ export const useAuth = (): [AuthMethodsInterface, boolean, string | null] => {
       setLoading(true);
       await auth.signOut();
     } catch (err) {
-      console.error(err);
-      const { code } = err as FirebaseError;
-      setError(code);
+      errorHandler(err, setError);
     } finally {
       setLoading(false);
     }

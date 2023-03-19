@@ -10,7 +10,7 @@ import { LoginFormFormInitial } from '@component/forms/login-form/login-form.ini
 
 import { BlockWrapper, LoginWrapper } from './login.styles';
 import { LoginFormValidation } from '@component/forms/login-form/login-form.validation';
-import { useAuth } from 'src/hooks/auth.hook';
+import { useAuth } from 'src/hooks/auth-hook/auth-hook'; // TODO fix path
 import { Link } from 'react-router-dom';
 import { PageEnum } from '@enum/page.enum';
 import { ColorEnum } from '@style/colors.enum';

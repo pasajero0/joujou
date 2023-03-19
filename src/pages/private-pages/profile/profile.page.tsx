@@ -3,7 +3,7 @@ import { Button, Typography } from '@mui/material';
 import { Wrapper } from '@page/auth-pages/common.styles';
 
 import { BlockWrapper } from './profile.styles';
-import { useAuth } from 'src/hooks/auth.hook'; // TODO! add path
+import { useAuth } from 'src/hooks/auth-hook/auth-hook'; // TODO! fix path
 
 const ProfilePage = () => {
   const [{ onSignOut }] = useAuth();
